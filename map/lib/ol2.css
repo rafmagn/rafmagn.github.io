@@ -79,7 +79,7 @@ div.olControlMousePosition {
     right: 3px;
     display: block;
     position: absolute;
-    font-family: Arial;
+    /*font-family: Arial;*/
     font-size: smaller;
 }
 
@@ -311,7 +311,7 @@ div.olControlSaveFeaturesItemInactive {
     top: 25px;
     right: 0;
     width: 20em;
-    font-family: sans-serif;
+    /*font-family: sans-serif;*/
     font-weight: bold;
     margin-top: 3px;
     margin-left: 3px;
@@ -448,7 +448,7 @@ div.olControlZoom a {
     padding: 0;
     color: white;
     font-size: 18px;
-    font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Arial, Helvetica, sans-serif;
+    /*font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Arial, Helvetica, sans-serif;*/
     font-weight: bold;
     text-decoration: none;
     text-align: center;
