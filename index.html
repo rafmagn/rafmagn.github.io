@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Mapping Berlin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style>
+        /*.vertical-center {*/
+        /*min-height: 100%;*/
+        /*min-height: 100vh;*/
+        /*display: flex;*/
+        /*align-items: center;*/
+        /*}*/
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            /*background-color: #0d1021;*/
+            /*color: #f3e6ae;*/
+        }
+
+        main {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h1, h2, h3 {
+            font-family: "Lato", sans-serif;
+            font-weight: 700;
+        }
+
+
+        .carousel-indicators li {
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+        }
+
+        .carousel-caption {
+            /*color: #333;*/
+            text-shadow: 0 0 10px #222,  0 0 5px #222;
+        }
+
+        .carousel-inner, .embed-responsive {
+            box-shadow: 5px 5px 5px #222;
+            border-radius: 1%;
+        }
+
+        .row, .col {
+            padding-top: 1rem;
+        }
+
+        ul.bullet > li  {
+            margin-top: 0.5rem;
+        }
+
+        .carousel-item, .carousel-item img {
+            max-height: 333px;
+            height: 69.9vw;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:300,400,600" rel="stylesheet">
+</head>
+<body>
+    <main class="container align-items-center">
+            <h1>Mapping Berlin</h1>
+            <p class="lead">provides my very own map of Berlin.</p>
+            <hr class="my-4">
+                <div class="row justify-content-sm-center">
+                    <div class="col col-12 col-md-6">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="map/leaflet.html" height="100%" width="100%"></iframe>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-md-6">
+                        <div class="d-block d-md-none pt-4"></div>
+                        <h3>Genesis</h3>
+                        <div class="pt-2"></div>
+                        <ul class="bullet">
+                            <li>Made from own data – initially aggregated during my participation on <a href='http://www.openstreetmap.org/#map=11/52.5152/13.4301' rel='nofollow'>OpenStreetMap</a> from 2009 to 2012 – and supplemented by public domain Landsat imagery</li>
+                            <li>Using the OSM toolchain: JOSM, Maperitive, Leaflet &amp; OpenLayers</li>
+                            <li>Still extended and updated occasionally</li>
+                            <li>Originally inspired by the need of an attribution-free and free background map for another geospatial datamining project</li>
+                        </ul>
+                    </div>
+                </div>
+        <div class="row">
+            <div class="col col-12 col-md-6">
+                <h3>See it in action</h3>
+                <div class="pt-2"></div>
+                <ul class="lead bullet">
+                    <li>No distractions, no street names</li>
+                    <li>providing the pure map experience</li>
+                    <li>Two flavours:</li>
+                    <li>Lightweight, mobile-friendly using Leaflet</li>
+                    <li>As Overlay on an OSM-Mapnik map using OpenLayers</li>
+                </ul>
+                <div class="pt-2"></div>
+                <div class="row">
+                    <div class="col">
+                        <a class="btn btn-outline-primary" href="map/overlay.html" role="button">OpenLayers</a>
+                    </div>
+                    <div class="col text-right">
+                        <a class="btn btn-outline-dark" href="map/leaflet.html" role="button">Leaflet</a></div>
+                    </div>
+            </div>
+            <div class="col col-12 col-md-6">
+                <div class="d-block d-md-none pt-4"></div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="images/track-fine-2.png" alt="Screenshot of JOSM showing tracks close up">
+                            <div class="carousel-caption">
+                                <h3>own data and satellite&nbsp;imagery</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/track-coarse.png" alt="Screenshot of JOSM showing tracks coarse">
+                            <a href="map/leaflet.html">
+                                <div class="carousel-caption">
+                                    <h3>processed using the OSM tool&nbsp;chain</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/josm-3.png" alt="Screenshot of JOSM showing paths and a overlayed track">
+                            <div class="carousel-caption">
+                                <h3>creating and growing a paradigmatic roadmap</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/maperitive.png" alt="Screenshot of Maperitive">
+                            <div class="carousel-caption">
+                                <h3>my intellectual property and digital masterpiece</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="d-block d-md-none pt-4"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h3>Let’s just leave it as it was</h3>
+                    <p>
+                        once I am interested in being contacted, you may find the details here
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+</html>
