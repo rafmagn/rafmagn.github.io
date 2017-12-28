@@ -11,6 +11,7 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MZVXD8X');</script>
     <!-- End Google Tag Manager -->
+    <!-- TODO: selfcontain bootstrap and dependencies -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:300,400,600" rel="stylesheet">
     <style>
@@ -101,20 +102,20 @@
                 <div class="pt-2"></div>
                 <div class="row">
                     <div class="col">
-                        <a class="btn btn-outline-primary" href="map/overlay.html" role="button">OpenLayers</a>
+                        <a id="btn-map-ol" class="btn btn-outline-primary" href="map/overlay.html" role="button">OpenLayers</a>
                     </div>
                     <div class="col text-right">
-                        <a class="btn btn-outline-dark" href="map/leaflet.html" role="button">Leaflet</a></div>
+                        <a id="btn-map-ll" class="btn btn-outline-dark" href="map/leaflet.html" role="button">Leaflet</a></div>
                     </div>
             </div>
             <div class="col col-12 col-md-6">
                 <div class="d-block d-md-none pt-4"></div>
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div id="buzzWordSlider" class="carousel slide" data-ride="carousel" data-interval="3000">
                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#buzzWordSlider" data-slide-to="0" class="active"></li>
+                        <li data-target="#buzzWordSlider" data-slide-to="1"></li>
+                        <li data-target="#buzzWordSlider" data-slide-to="2"></li>
+                        <li data-target="#buzzWordSlider" data-slide-to="3"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
