@@ -72,8 +72,8 @@
             <hr class="my-4">
                 <div class="row justify-content-sm-center">
                     <div class="col col-12 col-md-6">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="map/leaflet.html" height="100%" width="100%"></iframe>
+                        <div id="slippyFrame" class="embed-responsive embed-responsive-16by9">
+                            <iframe id="slippyMap" class="embed-responsive-item" src="map/leaflet.html" height="100%" width="100%"></iframe>
                         </div>
                     </div>
                     <div class="col col-12 col-md-6">
@@ -167,10 +167,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="map/lib/nasty.js"></script>
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
 </body>
 </html>

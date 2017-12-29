@@ -19,7 +19,7 @@ var __rafmagn__ = {
     'anonRE': /^([0-9]{1,3}(?:\.[0-9]{1,3}){2}|[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){1})([:.])?.*/,
     'local' : 'localIP',
     'anonymizeLocal' : true,
-    'dryRun' : true
+    'dryRun' : false
 };
 
 if (___probeES6()) {
