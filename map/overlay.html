@@ -107,6 +107,18 @@
         });
         map.addLayer(overlayLayer);
 
+        var route = new OpenLayers.Layer.Vector("Route", {
+            strategies: [new OpenLayers.Strategy.Fixed()],
+            protocol: new OpenLayers.Protocol.HTTP({
+                url: "route.gpx",
+                format: new OpenLayers.Format.GPX()
+            }),
+            style: {strokeColor: "red", strokeWidth: 3, strokeOpacity: 0.95},
+            projection: map.displayProjection,
+            visibility: false
+        });
+        map.addLayer(route);
+
         map.setCenter(coordPosition, 5);
         if (!map.getCenter()) {
             map.zoomToMaxExtent();
