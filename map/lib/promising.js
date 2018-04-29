@@ -6,7 +6,7 @@ __rafmagn__.timeout = 1000;
  */
 
 /* track 'em IPs */
-if (__rafmagn__.urlParams["opt"] && (__rafmagn__.urlParams["opt"] == 'in')) {
+if (__rafmagn__.demo || __rafmagn__.urlParams["opt"] && (__rafmagn__.urlParams["opt"] == 'in')) {
 
     var pInternal = new Promise(
         function(resolve, reject) {
@@ -48,43 +48,51 @@ if (__rafmagn__.urlParams["opt"] && (__rafmagn__.urlParams["opt"] == 'in')) {
 // http://www.html5rocks.com/en/tutorials/es6/promises/#toc-promisifying-xmlhttprequest
     function getExternalIp() {
         return new Promise(function(resolve, reject) {
-            // Do the usual XHR stuff
-            var req = new XMLHttpRequest();
-            req.open('GET', 'https://jsonip.com/');
 
-            req.onload = function() {
-                // This is called even on 404 etc
-                // so check the status
-                if (req.status == 200) {
+            if (__rafmagn__.demo) {
+                resolve({
+                    'name': 'externalIP',
+                    'msg' : '198.51.100.0'.replace(__rafmagn__.anonRE, '$1$2123') /* dummy-none mitigation in demo-mode */
+                });
+            }
+            else {
+                // Do the usual XHR stuff
+                var req = new XMLHttpRequest();
+                req.open('GET', 'https://jsonip.com/');
 
-                    try {
-                        let payload = JSON.parse(req.response);
+                req.onload = function() {
+                    // This is called even on 404 etc
+                    // so check the status
+                    if (req.status == 200) {
+                        try {
+                            let payload = JSON.parse(req.response);
 
-                        if (payload && typeof payload['ip'] === 'string') {
-                            resolve({
-                                'name': 'externalIP',
-                                'msg': payload['ip'].replace(__rafmagn__.anonRE, '$1$20')
-                            });
+                            if (payload && typeof payload['ip'] === 'string') {
+                                resolve({
+                                    'name': 'externalIP',
+                                    'msg' : payload['ip'].replace(__rafmagn__.anonRE, '$1$20') /* always mitigate external IPs */
+                                });
+                            }
                         }
+                        catch (e) {
+                            reject(Error(e.message));
+                        }
+
+                        reject('Bogus Ip');
                     }
-                    catch (e) {
-                        reject(Error(e.message));
+                    else {
+                        reject(Error(req.statusText));
                     }
+                };
 
-                    reject('Bogus Ip');
-                }
-                else {
-                    reject(Error(req.statusText));
-                }
-            };
+                // Handle network errors
+                req.onerror = function() {
+                    reject(Error("Network Error"));
+                };
 
-            // Handle network errors
-            req.onerror = function() {
-                reject(Error("Network Error"));
-            };
-
-            // Make the request
-            req.send();
+                // Make the request
+                req.send();
+            }
         });
     }
 }

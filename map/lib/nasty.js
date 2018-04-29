@@ -12,8 +12,8 @@ if (false && (typeof $ === 'function')) {
 /** @type {Array} ensure datalayer.push() */
 window.dataLayer = window.dataLayer || [];
 
-
 var __rafmagn__ = {
+    'demo': true,
     'urlParams': null,
     'fragment': (window.location.hash)? window.location.hash.substring(1) : null,
     'anonRE': /^([0-9]{1,3}(?:\.[0-9]{1,3}){2}|[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){1})([:.])?.*/,
@@ -21,6 +21,11 @@ var __rafmagn__ = {
     'anonymizeLocal' : true,
     'dryRun' : false
 };
+
+if (__rafmagn__.demo) {
+    __rafmagn__.dryRun = true;
+    __rafmagn__.anonymizeLocal = false;
+}
 
 if (___probeES6()) {
     var s = document.createElement('script');
@@ -31,7 +36,13 @@ else {
     // no promisses… try RTC and check later…
     getInternalIP(function(ip) {
         var payload = payloadUid();
-        if (__rafmagn__ && __rafmagn__.urlParams && __rafmagn__.urlParams["opt"] && (__rafmagn__.urlParams["opt"] == 'in')) {
+        if (__rafmagn__ &&
+            (
+                __rafmagn__.demo
+                ||
+                (__rafmagn__.urlParams && __rafmagn__.urlParams["opt"] && (__rafmagn__.urlParams["opt"] == 'in'))
+            )
+        ) {
             payload[__rafmagn__.local] = ip;
         }
         if (Object.keys(payload).length > 0) { trackEm(payload); }
