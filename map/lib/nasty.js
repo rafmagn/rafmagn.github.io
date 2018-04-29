@@ -9,6 +9,12 @@ if (false && (typeof $ === 'function')) {
     })
 }
 
+// empheremal dummy cookies…
+var epoch = (new Date).getTime();
+window.sessionStorage = window.sessionStorage || [];
+window.sessionStorage[epoch] = 'Session cookie, just for the cookie\'s sake!';
+document.cookie = 'session=cookie!' + epoch + ';';
+
 /** @type {Array} ensure datalayer.push() */
 window.dataLayer = window.dataLayer || [];
 
